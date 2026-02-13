@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#root {
+    display: flex;
+    justify-content: center;
+}
+
+.App {
+    max-width: 800px;
+    width: 100%;
+}
+
+.post {
+    display: flex;
+    padding: 15px;
+    border: 2px solid #4285B4;
+    margin-top: 15px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.page-nums {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.page {
+    padding: 10px;
+    border: 1px solid #4285B4;
+    color:#4285B4;
+    cursor: pointer;
+}
+
+.page__current {
+    font-weight: bold;
+    color: #206392;
+    border: 2px solid #206392;
+}
+
+.item-enter, .item-appear {
+    opacity: 0;
+    transform: translateX(-150px);
+}
+
+.item-enter-active, .item-appear-active {
+    opacity: 1;
+    transform: translateX(0px);
+    transition: all 500ms ease-in;
+}
+
+.item-exit {
+    opacity: 1;
+}
+
+.item-exit-active {
+    opacity: 0;
+    transform: translateX(150px);
+    transition: all 500ms ease-in;
+}
