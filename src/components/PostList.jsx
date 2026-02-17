@@ -15,7 +15,7 @@ function PostList({posts, title, remove}) {
     </h1>
     <TransitionGroup>
       {posts.map((post, index) =>
-          <PostItem key={post.id} remove={remove} number={index + 1} post={post}/>
+          <PostItem key={post.id} remove={remove} post={post}/>
       )}
     </TransitionGroup>
   </div>
