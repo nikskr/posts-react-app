@@ -1,27 +1,35 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './styles/App.css';
-import { BrowserRouter, Route, Routes } from 'react-router';
-import Posts from './pages/Posts';
-import About from './pages/About';
+import { BrowserRouter } from 'react-router';
 import Navbar from './components/UI/navbar/Navbar';
-import Error from './pages/Error';
-import PostId from './pages/PostId';
+import AppRouter from './components/AppRouter';
+import { AuthContext } from './context/context.js';
 
 
 function App() {
+  const [isAuth, setIsAuth] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    if(localStorage.getItem('auth')) {
+      setIsAuth(true);
+    }
+    setIsLoading(false);
+  }, [])
+
   return (
-  <div className='App'>
-  <BrowserRouter>
-    <Navbar />
-      <Routes>
-        <Route exact path='posts' element={<Posts />}/>
-        <Route exact path='posts/:id' element={<PostId />}/>
-        <Route path='about' element={<About />}/>
-        <Route path='*' element={<Error />}/>
-      </Routes>
-    </BrowserRouter>
-  </div>
-  
+    <div className="App">
+      <AuthContext.Provider value={{
+          isAuth,
+          setIsAuth,
+          isLoading
+        }}>
+          <BrowserRouter>
+          <Navbar />
+          <AppRouter /> 
+        </BrowserRouter>
+      </AuthContext.Provider> 
+    </div>
   )
 }
 

@@ -11,13 +11,13 @@ function PostItem({post, remove, ...props}) {
       <CSSTransition nodeRef={nodeRef} timeout={500} classNames='item' {...props} appear>
         <div ref={nodeRef} className='post'>
           <div className='post__content'>
-            <strong>{props.post.id}. {post.title}</strong>
+            <strong>{post.id}. {post.title}</strong>
             <div>
               {post.body}
             </div>
           </div>
           <div className='post__btns'>
-            <MyButton onClick={() => router.push('/posts')}>Open</MyButton>
+            <MyButton onClick={() => router.push(`/posts/${post.id}`)}>Open</MyButton>
             <MyButton onClick={() => remove(post)}>Delete</MyButton>
           </div>
         </div>
