@@ -1,6 +1,6 @@
 # 📝 Posts React App
 
-**🔗 Live Demo:** [[nikskr.github.io/posts](https://nikskr.github.io)](https://nikskr.github.io/posts-react-app/)
+**🔗 Live Demo:** [https://nikskr.github.io/posts-react-app/](https://nikskr.github.io/posts-react-app/)
 
 A feature-rich Single Page Application (SPA) built with React, focusing on efficient data handling, custom UI components, and modern routing practices.
 
