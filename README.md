@@ -1,5 +1,7 @@
 # 📝 Posts React App
 
+[![GitHub Pages](https://img.shields.io)](https://nikskr.github.io/posts)
+
 A feature-rich Single Page Application (SPA) built with React, focusing on efficient data handling, custom UI components, and modern routing practices.
 
 ## 🚀 Key Features
