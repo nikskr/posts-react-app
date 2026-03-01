@@ -39,6 +39,7 @@ function Posts() {
 
   function createPost(newPost) {
     setPosts([...posts, newPost]);
+    setModal(false);
   }
 
   function removePost(post) {
@@ -60,7 +61,7 @@ function Posts() {
       <hr style={{margin: '15px 0px'}} />
 
       <PostFilter filter={filter} setFilter={setFilter}/>
-      {postError &&  <h1 style={{textAlign: 'center', marginTop: '20px'}}>Error occured {postError}</h1>}
+      {postError &&  <h1 style={{textAlign: 'center', marginTop: '10px'}}>Error occured {postError}</h1>}
 
       <MySelect value={limit} onChange={(value) => setLimit(value)} defaultValue={'Page elements amount'}
         options={[
@@ -73,7 +74,7 @@ function Posts() {
       </MySelect>
       
       <PostList remove={removePost} posts={sortedAndSearchedPosts} title={'Posts'}/> 
-      <div ref={lastElement} style={{height: 20, background: 'red'}} />     
+      <div ref={lastElement} style={{marginTop: 20, height: 1, background: '#4285B4'}} />     
       {isPostsLoading && <div style={{display: 'flex', justifyContent: 'center', marginTop: '20px'}}><Loader  /></div>}
       <Pagination totalPages={totalPages} page={page} changePage={changePage} />
     </div>
