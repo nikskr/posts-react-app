@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './styles/App.css';
-import { BrowserRouter } from 'react-router';
+import { HashRouter } from 'react-router';
 import Navbar from './components/UI/navbar/Navbar';
 import AppRouter from './components/AppRouter';
 import { AuthContext } from './context/context.js';
@@ -24,10 +24,10 @@ function App() {
           setIsAuth,
           isLoading
         }}>
-          <BrowserRouter>
+          <HashRouter>
           <Navbar />
           <AppRouter /> 
-        </BrowserRouter>
+        </HashRouter>
       </AuthContext.Provider> 
     </div>
   )
